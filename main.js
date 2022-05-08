@@ -165,7 +165,11 @@ function handleKeyDown(event) {
             charToAdd = clicked.childNodes[0].textContent;
         }
         element.style.backgroundColor = 'red';
-        textArea.textContent += charToAdd;
+        if (event.shiftKey) {
+            textArea.textContent += charToAdd.toUpperCase();
+        } else {
+            textArea.textContent += charToAdd;
+        }
         const end = textArea.value.length;
         textArea.setSelectionRange(end, end);
         return true;
@@ -513,6 +517,14 @@ function handlePressSpace(event) {
     let clicked = event.target;
     if (clicked.className === 'space') {
         clicked.style.backgroundColor = 'red';
+        let pressed = document.getElementsByClassName("space")[0];
+        pressed.style.backgroundColor = 'red';
+        let textArea = document.getElementById('write');
+        textArea.textContent += ' ';
+
+        const end = textArea.value.length;
+        textArea.setSelectionRange(end, end);
+
         return true;
     }
 
@@ -522,6 +534,10 @@ function handlePressSpace(event) {
         pressed.style.backgroundColor = 'red';
         let textArea = document.getElementById('write');
         textArea.textContent += event.key;
+
+        const end = textArea.value.length;
+        textArea.setSelectionRange(end, end);
+
         return true;
     }
 }
