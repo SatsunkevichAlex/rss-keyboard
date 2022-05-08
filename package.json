@@ -1,0 +1,24 @@
+{
+  "name": "satsunkevichalex-JSFE2022Q1",
+  "version": "1.0.0",
+  "description": "Private repository for @satsunkevichalex",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/satsunkevichalex-JSFE2022Q1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rolling-scopes-school/satsunkevichalex-JSFE2022Q1/issues"
+  },
+  "homepage": "https://github.com/rolling-scopes-school/satsunkevichalex-JSFE2022Q1#readme"
+}
