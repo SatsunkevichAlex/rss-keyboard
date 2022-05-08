@@ -150,7 +150,7 @@ div#keyboard {
 }
 
 .caps-lock,
-.backspace {    
+.backspace {
     width: 80px !important;
 }
 
@@ -158,14 +158,26 @@ div#keyboard {
     width: 300px !important;
 }
 
-#tilda-row > div,
-#tab-row > div,
-#caps-row > div,
-#shift-row > div {
+#tilda-row>div,
+#tab-row>div,
+#caps-row>div,
+#shift-row>div {
     display: flex;
     justify-content: space-around;
 }
 
 div {
     user-select: none;
+}
+
+div:active {
+    border-radius: 15px;
+}
+
+div:target {
+    border-radius: 15px;
+}
+
+div.border {
+    border-radius: 15px;
 }

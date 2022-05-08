@@ -178,11 +178,13 @@ function handleKeyDown(event) {
     let key = event.key;
     if (key) {
         let pressed = document.getElementsByClassName(key.toLowerCase())[0];
-        if (pressed && pressed.nodeName === 'DIV') {
+        if (pressed && pressed.nodeName === 'div') {
             pressed = pressed.closest("div");
         }
         if (pressed) {
             pressed.style.backgroundColor = 'red';
+            pressed.classList.toggle("border");
+            setTimeout(() => { pressed.classList.toggle("border") }, 150);
             textArea.textContent += event.key;
         }
     }
@@ -292,7 +294,7 @@ function handleKeyUp(event) {
     if (key) {
         let pressed = document.getElementsByClassName(key.toLowerCase())[0];
         if (pressed) {
-            if (pressed.nodeName === 'DIV') {
+            if (pressed.nodeName === 'div') {
                 pressed = pressed.closest("div");
             }
             pressed.style.backgroundColor = 'white';
@@ -336,6 +338,9 @@ function handlePressArrow(event) {
     }
     let textarea = document.getElementById('write');
     if (arrow) {
+        arrow.classList.toggle("border");
+        setTimeout(() => { arrow.classList.toggle("border") }, 150);
+
         textarea.textContent += arrow.textContent;
         arrow.style.backgroundColor = 'red';
         const end = textarea.value.length;
@@ -388,6 +393,8 @@ function handlePressBackSpace(event) {
     let clicked = event.target;
     if (clicked.className === 'backspace') {
         clicked.style.backgroundColor = 'red';
+        clicked.classList.toggle("border");
+        setTimeout(() => { clicked.classList.toggle("border") }, 150);
         let textArea = document.getElementById('write');
         let selectionStart = textArea.selectionStart;
         let textContent = textArea.textContent;
@@ -403,6 +410,10 @@ function handlePressBackSpace(event) {
     let key = event.key;
     if (key && key.toLowerCase() === 'backspace') {
         let pressed = document.getElementsByClassName("backspace")[0];
+
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
+
         pressed.style.backgroundColor = 'red';
         let textArea = document.getElementById('write');
         let selectionStart = textArea.selectionStart;
@@ -417,9 +428,12 @@ function handlePressBackSpace(event) {
 }
 
 function handlePressDelete(event) {
-    let clicked = event.target;
-    if (clicked.className === 'delete') {
-        clicked.style.backgroundColor = 'red';
+    let pressed = event.target;
+    if (pressed.className === 'delete') {
+        pressed.style.backgroundColor = 'red';
+
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
 
         let textArea = document.getElementById('write');
         let selectionStart = textArea.selectionStart;
@@ -437,6 +451,9 @@ function handlePressDelete(event) {
     if (key && key.toLowerCase() == 'delete') {
         let pressed = document.getElementsByClassName('delete')[0];
         pressed.style.backgroundColor = 'red';
+
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
 
         let textArea = document.getElementById('write');
         let selectionStart = textArea.selectionStart;
@@ -484,6 +501,9 @@ function handleUnPressBackSpace(event) {
 function handlePressWin(event) {
     let clicked = event.target;
     if (clicked.className === 'win') {
+        clicked.classList.toggle("border");
+        setTimeout(() => { clicked.classList.toggle("border") }, 150);
+
         clicked.style.backgroundColor = 'red';
         return true;
     }
@@ -491,6 +511,10 @@ function handlePressWin(event) {
     let key = event.key;
     if (key && key.toLowerCase() == 'meta') {
         let pressed = document.getElementsByClassName('win')[0];
+
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
+
         pressed.style.backgroundColor = 'red';
         return true;
     }
@@ -519,6 +543,8 @@ function handlePressSpace(event) {
         clicked.style.backgroundColor = 'red';
         let pressed = document.getElementsByClassName("space")[0];
         pressed.style.backgroundColor = 'red';
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         let textArea = document.getElementById('write');
         textArea.textContent += ' ';
 
@@ -532,6 +558,8 @@ function handlePressSpace(event) {
     if (key && key.toLowerCase() === ' ') {
         let pressed = document.getElementsByClassName("space")[0];
         pressed.style.backgroundColor = 'red';
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         let textArea = document.getElementById('write');
         textArea.textContent += event.key;
 
@@ -562,6 +590,8 @@ function handleUnPressSpace(event) {
 function handlePressAlt(event) {
     let clicked = event.target;
     if (clicked.className === 'alt') {
+        clicked.classList.toggle("border");
+        setTimeout(() => { clicked.classList.toggle("border") }, 150);
         clicked.style.backgroundColor = 'red';
         return true;
     }
@@ -577,6 +607,8 @@ function handlePressAlt(event) {
             pressed = alts[1];
         }
         pressed.style.backgroundColor = 'red';
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         return true;
     }
 }
@@ -607,6 +639,8 @@ function handlePressShift(event) {
     let clicked = event.target;
     if (clicked.className === 'shift') {
         clicked.style.backgroundColor = 'red';
+        clicked.classList.toggle("border");
+        setTimeout(() => { clicked.classList.toggle("border") }, 150);
         return true;
     }
 
@@ -622,6 +656,8 @@ function handlePressShift(event) {
         }
 
         pressed.style.backgroundColor = 'red';
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         return true;
     }
 }
@@ -656,6 +692,8 @@ function handlePressTab(event) {
     let clicked = event.target;
     if (clicked.className === 'tab') {
         target.style.backgroundColor = 'red';
+        target.classList.toggle("border");
+        setTimeout(() => { target.classList.toggle("border") }, 150);
         textarea.textContent += '    ';
         const end = textarea.value.length;
         textarea.setSelectionRange(end, end);
@@ -666,6 +704,8 @@ function handlePressTab(event) {
     if (key && key.toLowerCase() === 'tab') {
         let pressed = document.getElementsByClassName(
             key.toLowerCase())[0];
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         pressed.style.backgroundColor = 'red';
         textarea.textContent += '    ';
         const end = textarea.value.length;
@@ -696,6 +736,8 @@ function handlePressCtrl(event) {
     let clicked = event.target;
     if (clicked.className === 'ctrl') {
         target.style.backgroundColor = 'red';
+        target.classList.toggle("border");
+        setTimeout(() => { target.classList.toggle("border") }, 150);
         return true;
     }
 
@@ -710,6 +752,8 @@ function handlePressCtrl(event) {
 
     if (key && key.toLowerCase() == 'control') {
         pressed.style.backgroundColor = 'red';
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         return true;
     }
 }
@@ -739,6 +783,8 @@ function handlePressEnter(event) {
     let target = event.target;
     if (target.className === 'enter') {
         target.style.backgroundColor = 'red';
+        target.classList.toggle("border");
+        setTimeout(() => { target.classList.toggle("border") }, 150);
         let textArea = document.getElementById('write');
         textArea.textContent += '\n';
         return true;
@@ -748,6 +794,8 @@ function handlePressEnter(event) {
     if (key && key.toLowerCase() === 'enter') {
         let pressed = document.getElementsByClassName(
             key.toLowerCase())[0];
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         pressed.style.backgroundColor = 'red';
         let textArea = document.getElementById('write');
         textArea.textContent += '\n';
@@ -775,6 +823,8 @@ function handleUnPressEnter(event) {
 function handlePressCaps(event) {
     let target = event.target;
     if (target.className === 'caps-lock') {
+        target.classList.toggle("border");
+        setTimeout(() => { target.classList.toggle("border") }, 150);
         target.style.backgroundColor = 'red';
         return true;
     }
@@ -783,6 +833,8 @@ function handlePressCaps(event) {
     if (key && key.toLowerCase() === 'capslock') {
         let pressed = document.getElementsByClassName(
             'caps-lock')[0];
+        pressed.classList.toggle("border");
+        setTimeout(() => { pressed.classList.toggle("border") }, 150);
         pressed.style.backgroundColor = 'red';
         return true;
     }
